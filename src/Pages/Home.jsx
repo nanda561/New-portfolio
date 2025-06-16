@@ -5,23 +5,25 @@ import Profile from "../assets/profile.webp";
 import Whatsapp from "../assets/whatsapp.svg";
 import { About } from "../Components/About";
 import Skills from "../Components/Skills";
+import Projects from "../Components/Projects";
+import Contact from "../Components/Contact";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("ul li a");
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            console.log("Intersecting:", entry.target.id);
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.7 } // Trigger when 70% of the section is visible
+      { threshold: 0.3 } // Lowered threshold to catch shorter sections
     );
 
     sections.forEach((section) => {
@@ -76,12 +78,17 @@ const Portfolio = () => {
               </a>
             </li>
             <li>
-              <a href="#" style={{ "--navAni": 4 }}>
+              <a
+                href="#projects"
+                style={{ "--navAni": 4 }}
+                className={activeSection === "projects" ? "active" : ""}
+              >
                 Portfolio
               </a>
             </li>
             <li>
-              <a href="#" style={{ "--navAni": 5 }}>
+              <a href="#contact" style={{ "--navAni": 5 }}
+               className={activeSection === "contact" ? "active" : ""}>
                 Contact
               </a>
             </li>
@@ -120,7 +127,7 @@ const Portfolio = () => {
               </div>
               <div className="icon-block">
                 <a href="https://wa.me/9347521480" target="_blank" rel="noopener noreferrer">
-                  <img src={Whatsapp} alt="Telegram Icon" />
+                  <img src={Whatsapp} alt="WhatsApp Icon" />
                 </a>
               </div>
               <div className="icon-block">
@@ -146,11 +153,20 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
       <section id="about">
         <About />
       </section>
+
       <section id="skills">
         <Skills />
+      </section>
+
+      <section id="projects" >
+        <Projects />
+      </section>
+        <section id="contact">
+        <Contact />
       </section>
     </div>
   );
