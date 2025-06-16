@@ -5,7 +5,7 @@ import {
   drone,
   bug,
   nostra,
-} from "../assets/Portfolio/projects.js";
+} from "../assets/Portfolio/Projects.js";
 
 const projects = [
   {
