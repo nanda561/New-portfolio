@@ -5,7 +5,7 @@ import {
   drone,
   bug,
   nostra,
-} from "../assets/Porjects/projects.js";
+} from "../assets/Portfolio/projects.js";
 
 const projects = [
   {
@@ -58,7 +58,7 @@ const projects = [
       "Designed and developed a modern e-commerce website using HTML, CSS, and JavaScript. Features include responsive design, smooth user experience, product pages, and interactive UI for online shopping.",
     technologies: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/nanda0311/Nostra-E-commerce",
-    live: "#", // Add live site link if deployed (e.g., Netlify/Vercel/GitHub Pages)
+    live: "#", 
     image: nostra, // Add a real screenshot to public/images
   },
 ];
