@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Linked from "../assets/link.svg";
-import Profile from "../assets/profile.webp";
 import Whatsapp from "../assets/whatsapp.svg";
 import { About } from "../Components/About";
 import Skills from "../Components/Skills";
 import Projects from "../Components/Projects";
 import Contact from "../Components/Contact";
+import developer from '../assets/developer.jpg';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -23,7 +23,7 @@ const Portfolio = () => {
           }
         });
       },
-      { threshold: 0.3 } // Lowered threshold to catch shorter sections
+      { threshold: 0.3 } 
     );
 
     sections.forEach((section) => {
@@ -141,7 +141,7 @@ const Portfolio = () => {
               </div>
             </div>
             <div className="images">
-              <img src={Profile} alt="Profile" className="img-w" />
+              <img src={developer} alt="Profile" className="img-w" />
             </div>
           </div>
           <div className="detail">

@@ -2,13 +2,14 @@ import React from "react";
 import "./About.css";
 import ProfilePhoto from "../assets/aboutpic.webp";
 import Resume from "../assets/resume.pdf";
+import aboutimg from '../assets/aboutimg.jpg';
 
 export const About = () => {
   return (
     <div className="about-container">
       {/* Left Section: Rounded Image */}
       <div className="about-image">
-        <img src={ProfilePhoto} alt="Profile" />
+        <img src={aboutimg} alt="Profile" />
       </div>
 
       {/* Right Section: Content */}
