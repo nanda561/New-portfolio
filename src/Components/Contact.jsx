@@ -105,10 +105,12 @@ export default function ContactSection() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-gray-800 bg-gray-900 text-white">
+      <footer  className="py-20 px-4 text-white"
+        style={{ backgroundColor: "#1F252E" }}
+      >
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2024 Dharalingam Nandakishore. All rights reserved.
+            © 2025 Dharalingam Nandakishore. All rights reserved.
           </p>
         </div>
       </footer>
