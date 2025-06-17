@@ -26,7 +26,7 @@ export default function ContactSection() {
                 <div className="flex items-center space-x-4">
                   <Mail className="w-6 h-6 text-orange-500" />
                   <a
-                    href="mailto:nanda0311.dev@gmail.com"
+                    href="mailto:nandu3112002@gmail.com"
                     className="text-gray-300 hover:text-orange-400 transition"
                   >
                     nandu3112002@gmail.com

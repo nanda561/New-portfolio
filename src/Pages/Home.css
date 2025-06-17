@@ -11,7 +11,9 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
+
 body {
     font-family: 'Outfit', sans-serif;
     background-color: #1F252E;
@@ -34,11 +36,10 @@ body {
 /* Navigation */
 header {
     background: var(--primary-dark);
-    position: relative;
-    box-shadow: 0 4px 17px rgb(255 255 255 / 10%);
     position: sticky;
     top: 0;
     z-index: 1;
+    box-shadow: 0 4px 17px rgba(255, 255, 255, 0.1);
 }
 
 .page-header {
@@ -113,6 +114,7 @@ li a:hover {
     row-gap: 2rem;
     column-gap: 6rem;
     align-items: center;
+    position: relative;
 }
 
 .main h3 {
@@ -153,10 +155,6 @@ li a:hover {
 }
 
 /* Round Section */
-.main {
-    position: relative;
-}
-
 .big-circle {
     height: 100%;
     width: 100%;
@@ -180,71 +178,49 @@ li a:hover {
     background-color: #fff;
     box-shadow: 0 0 10px #fff;
 }
-a {
-  display: inline-flex; /* or display: block; */
-  justify-content: center;
-  align-items: center;
-}
-
 
 .icon-block img {
-    margin: 0px auto;
     width: 60%;
     animation: Rotate-reverse 20s linear infinite;
-   
     transition: background-color 0.3s ease, transform 0.3s ease, background-image 0.3s ease;
 }
-/* Hover color effect using CSS filter */
-icon-block:hover {
-    background-color: #0077B5; /* Default color (LinkedIn) */
+
+a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Hover Effects */
 .icon-block:hover img {
-    filter: invert(1); /* Invert the icon color */
+    filter: invert(1);
 }
 
-/* Specific background colors on hover for each social icon */
 .icon-block:nth-child(1):hover {
-    background-color: #130f0b; /* GitHub dark color */
+    background-color: #130f0b;
 }
 
-/* Define the hover effect for the Instagram icon */
 .icon-block:nth-child(2):hover {
-    background-color: transparent;  /* Remove solid color on hover */
-    background-image: linear-gradient(45deg, #ee2a7b , purple,#f9ce34); /* Gradient effect */
+    background-color: transparent;
+    background-image: linear-gradient(45deg, #ee2a7b , purple, #f9ce34);
     background-size: 200% 200%;
     background-position: 100% 0;
 }
 
-/* Change the color of the Instagram icon when hovered */
 .icon-block:nth-child(2):hover img {
-    filter: brightness(0) invert(1); /* Invert image color to match the gradient effect */
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
 }
-
-/* Reset background for non-hover state */
-.icon-block:nth-child(2) {
-    background-color: #fff;
-}
-
-/* Make sure the icon inside is centered */
-.icon-block img {
-    width: 60%;
-    transition: background-color 0.3s ease, transform 0.3s ease, background-image 0.3s ease;
-}
-
-/* On hover, the image will scale and its color will change */
-.icon-block:nth-child(2):hover img {
-    transform: scale(1.1); /* Optional: scale image on hover */
-}
-
 
 .icon-block:nth-child(3):hover {
-    background-color: #25D366; /* Telegram blue color */
+    background-color: #25D366;
 }
 
 .icon-block:nth-child(4):hover {
-    background-color: #0077B5; /* LinkedIn blue color */
+    background-color: #0077B5;
 }
+
+/* Positioning Icons */
 .icon-block:first-child {
     top: 0;
     left: 50%;
@@ -282,65 +258,39 @@ icon-block:hover {
     transform: translate(-50%, -50%);
 }
 
-/* Keyframe Animations */
+/* Keyframes */
 @keyframes Rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @keyframes Rotate-reverse {
-    from {
-        transform: rotate(360deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
 }
 
 @keyframes leftSideAni {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes navani {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes topSideAni {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Media Queries */
+/* Responsive Design */
 @media screen and (max-width: 1024px) {
     .container {
         padding: 0 4.4rem;
     }
+
     .main h3 {
-        color: #000;
         margin-top: 1rem;
     }
 }
@@ -349,6 +299,7 @@ icon-block:hover {
     .main {
         grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     }
+
     .rounding-sec {
         margin: auto;
     }
@@ -359,6 +310,24 @@ icon-block:hover {
         padding: 0 1.6rem;
     }
 }
+/* Fix oval image and stop rotation on mobile */
+@media screen and (max-width: 600px) {
+  /* Stop rotation animation */
+  .big-circle {
+    animation: none !important;
+  }
+  .icon-block img {
+    animation: none !important;
+  }
+
+  /* Make the image perfectly round */
+  .images img {
+    width: 200px;      /* same width and height */
+    height: 200px;     /* equal height */
+    border-radius: 50%; /* perfect circle */
+    object-fit: cover;  /* ensure image covers the area */
+  }
+}
 
 @media screen and (max-width: 600px) {
     body {
@@ -367,7 +336,6 @@ icon-block:hover {
 
     header {
         height: auto;
-        background-color: var(--primary-dark);
     }
 
     ul {
@@ -375,12 +343,11 @@ icon-block:hover {
         width: 100%;
         height: 100vh;
         position: absolute;
-        display: flex;
         flex-direction: column;
         text-align: center;
         top: 3.4rem;
         left: -100%;
-        z-index: 111111;
+        z-index: 9999;
     }
 
     .menu {
@@ -390,7 +357,7 @@ icon-block:hover {
         color: var(--primary-color);
     }
 
-    #click:checked~ul {
+    #click:checked ~ ul {
         left: 0%;
         transition: all 0.3s ease;
     }
@@ -413,5 +380,13 @@ icon-block:hover {
 
     .images {
         width: 200px;
+    }
+
+    .main h1 {
+        font-size: 2.5rem;
+    }
+
+    .main h3 {
+        font-size: 1.2rem;
     }
 }
