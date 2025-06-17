@@ -3,7 +3,7 @@ import "./Home.css";
 import Linked from "../assets/link.svg";
 import Whatsapp from "../assets/whatsapp.svg";
 import { About } from "../Components/Aboutnew";
-import Skills from "../Components/Skillsnew";
+import Skills from "../Components/Skills";
 import Projects from "../Components/Projects";
 import Contact from "../Components/Contact";
 import developer from '../assets/developer.jpg';
@@ -40,7 +40,7 @@ const Portfolio = () => {
       {/* Header and Navigation */}
       <header className="container">
         <div className="page-header">
-          <div className="logo">Portfolio
+          <div className="logo">portfolio
             <a href="#"></a>
           </div>
           <input type="checkbox" id="click" />

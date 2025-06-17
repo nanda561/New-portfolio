@@ -25,7 +25,7 @@ const Skills = () => {
     { name: "Figma", image: figma },
     { name: "GitHub", image: github },
     { name: "Git", image: git },
-    { name: "Docker", image: docker }, // Corrected spelling
+    // { name: "Docker", image: docker }, 
   ];
 
   return (
