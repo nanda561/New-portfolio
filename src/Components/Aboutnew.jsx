@@ -1,5 +1,5 @@
 import React from "react";
-import Resume from "../assets/resume.pdf";
+import NandaKishore from "../assets/Dharmalingam_Nandakishore_Resume.pdf";
 import aboutimg from "../assets/dev.jpg";
 
 export const About = () => {
@@ -28,7 +28,7 @@ export const About = () => {
           systems.
         </p>
         <a
-          href={Resume}
+          href={NandaKishore}
           download
           className="inline-block px-6 py-3 border-2 border-[#f9532d] text-[#f9532d] font-semibold rounded-md transition duration-300 hover:bg-[#f9532d] hover:text-white"
         >
