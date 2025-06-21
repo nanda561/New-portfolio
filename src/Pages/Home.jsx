@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Linked from "../assets/link.svg";
 import Whatsapp from "../assets/whatsapp.svg";
-import { About } from "../Components/Aboutnew";
+import { About } from "../Components/About";
 import Skills from "../Components/Skills";
 import Projects from "../Components/Projects";
 import Contact from "../Components/Contact";

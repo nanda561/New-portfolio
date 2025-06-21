@@ -1,6 +1,6 @@
 import React from "react";
 import NandaKishore from "../assets/Dharmalingam_Nandakishore_Resume.pdf";
-import aboutimg from "../assets/dev.jpg";
+import aboutimg from "../assets/aboutpic.jpg";
 
 export const About = () => {
   return (
