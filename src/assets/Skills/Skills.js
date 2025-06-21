@@ -9,4 +9,5 @@ import react from './react.svg';
 import C from './C.svg';
 import figma from './figma.svg';
 import docker from './docker.svg';
-export { java,python,js,html,css,git,github,react,C,figma,docker};              
+import sql from './sql.svg';
+export { java,python,js,html,css,git,github,react,C,figma,docker,sql};              
