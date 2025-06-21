@@ -103,7 +103,7 @@ const Portfolio = () => {
             <div className="big-circle">
               <div className="icon-block">
                 <a
-                  href="https://github.com/nanda0311"
+                  href="https://github.com/nanda561"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -132,7 +132,7 @@ const Portfolio = () => {
               </div>
               <div className="icon-block">
                 <a
-                  href="https://www.linkedin.com/in/nanda-kishore-8ba611292/"
+                  href="https://www.linkedin.com/in/nandakishore-dharmalingam-8ba611292/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -13,8 +13,8 @@ const projects = [
     description:
       "A modern, responsive portfolio website built with React and Vite to showcase my skills, resume, and projects.",
     technologies: ["React", "Vite", "CSS", "JavaScript"],
-    github: "https://github.com/nanda0311/Portfolio",
-    live: "#",
+    github: "https://github.com/nanda561/New-portfolio",
+    live: "https://dnk-portfolio.netlify.app/",
     image: Portfolio,
   },
   {
@@ -58,8 +58,8 @@ const projects = [
       "Designed and developed a modern e-commerce website using HTML, CSS, and JavaScript. Features include responsive design, smooth user experience, product pages, and interactive UI for online shopping.",
     technologies: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/nanda0311/Nostra-E-commerce",
-    live: "#", 
-    image: nostra, // Add a real screenshot to public/images
+    live: "#",
+    image: nostra,
   },
 ];
 
@@ -100,15 +100,23 @@ export default function ProjectsSection() {
                     <Github className="w-5 h-5 mr-2" />
                     Code
                   </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-white hover:text-orange-500 transition"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Live Demo
-                  </a>
+
+                  {project.live && project.live !== "#" ? (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-white hover:text-orange-500 transition"
+                    >
+                      <ExternalLink className="w-5 h-5 mr-2" />
+                      Live Demo
+                    </a>
+                  ) : (
+                    <span className="flex items-center text-gray-400 cursor-not-allowed">
+                      <ExternalLink className="w-5 h-5 mr-2" />
+                      No Live Demo
+                    </span>
+                  )}
                 </div>
               </div>
 
