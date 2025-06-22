@@ -1,5 +1,5 @@
 import React from "react";
-import NandaKishore from "../assets/Dharmalingam Nandakishore_Resume.pdf";
+import NandaKishore from "../assets/Dharmalingam_Nandakishore_Resume.pdf";
 import aboutimg from "../assets/aboutpic.jpg";
 
 export const About = () => {
