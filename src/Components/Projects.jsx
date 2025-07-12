@@ -6,13 +6,14 @@ import {
   bug,
   nostra,
 } from "../assets/Portfolio/Projects.js";
+import { techIconMap } from "../utils/techIcons.jsx";
 
 const projects = [
   {
     title: "Portfolio Website",
     description:
       "A modern, responsive portfolio website built with React and Vite to showcase my skills, resume, and projects.",
-    technologies: ["React", "Vite", "CSS", "JavaScript"],
+    technologies: ["React", "Vite", "CSS", "JavaScript","Tailwind"],
     github: "https://github.com/nanda561/New-portfolio",
     live: "https://dnk-portfolio.netlify.app/",
     image: Portfolio,
@@ -30,7 +31,7 @@ const projects = [
     title: "AIC-PECF Official Website",
     description:
       "Developed the official website frontend for Atal Incubation Centre – PEC Foundation with React and Tailwind CSS.",
-    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    technologies: ["React", "Tailwind", "JavaScript"],
     github: "https://github.com/nanda0311/aic-pecf-website",
     live: "https://aic-project.netlify.app/",
     image: atal,
@@ -38,7 +39,7 @@ const projects = [
   {
     title: "Bug Tracking System",
     description:
-      "Developed a web-based Bug Tracking System using Java, JSP, Servlets, and MySQL to streamline bug reporting and resolution in software projects. It includes real-time status updates, role-based access, and centralized bug tracking to improve software quality and team collaboration.",
+      "Developed a web-based Bug Tracking System using Java, JSP, Servlets, and MySQL to streamline bug reporting and resolution in software projects.",
     technologies: [
       "Java",
       "JSP",
@@ -55,7 +56,7 @@ const projects = [
   {
     title: "Nostra E-Commerce Website",
     description:
-      "Designed and developed a modern e-commerce website using HTML, CSS, and JavaScript. Features include responsive design, smooth user experience, product pages, and interactive UI for online shopping.",
+      "Designed and developed a modern e-commerce website using HTML, CSS, and JavaScript. Features include responsive design, smooth user experience, product pages, and interactive UI.",
     technologies: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/nanda0311/Nostra-E-commerce",
     live: "#",
@@ -131,8 +132,9 @@ export default function ProjectsSection() {
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-xs"
+                      className="flex items-center gap-1 bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-xs"
                     >
+                      {techIconMap[tech] || null}
                       {tech}
                     </span>
                   ))}

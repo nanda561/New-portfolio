@@ -10,4 +10,5 @@ import C from './C.svg';
 import figma from './figma.svg';
 import docker from './docker.svg';
 import sql from './sql.svg';
-export { java,python,js,html,css,git,github,react,C,figma,docker,sql};              
+import tailwind from './tailwind.svg'
+export { java,python,js,html,css,git,github,react,C,figma,docker,sql,tailwind};              

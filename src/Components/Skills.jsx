@@ -11,7 +11,8 @@ import {
   C,
   figma,
   docker,
-  sql
+  sql,
+  tailwind
 } from "../assets/Skills/Skills.js";
 
 const Skills = () => {
@@ -27,6 +28,7 @@ const Skills = () => {
     { name: "GitHub", image: github },
     { name: "Git", image: git },
     { name: "SQL", image: sql }, 
+    { name: "Tailwind", image: tailwind}, 
   ];
 
   return (
