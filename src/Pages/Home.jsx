@@ -6,7 +6,28 @@ import { About } from "../Components/About";
 import Skills from "../Components/Skills";
 import Projects from "../Components/Projects";
 import Contact from "../Components/Contact";
-import developer from '../assets/developer.jpg';
+import developer from "../assets/developer.jpg";
+import Sign from "../assets/sign.gif";      // animated gif
+import SignStatic from "../assets/sign.png"; // static signature
+
+// Signature component (switch gif → static image after some seconds)
+const Signature = () => {
+  const [showGif, setShowGif] = useState(true);
+
+  useEffect(() => {
+    // Adjust timeout according to gif duration (ms)
+    const timer = setTimeout(() => setShowGif(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <img
+      src={showGif ? Sign : SignStatic}
+      alt="Signature"
+      className="sign"
+    />
+  );
+};
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -18,17 +39,14 @@ const Portfolio = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("Intersecting:", entry.target.id);
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.3 } 
+      { threshold: 0.3 }
     );
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
 
     return () => {
       sections.forEach((section) => observer.unobserve(section));
@@ -40,8 +58,8 @@ const Portfolio = () => {
       {/* Header and Navigation */}
       <header className="container">
         <div className="page-header">
-          <div className="logo">portfolio
-            <a href="#"></a>
+          <div className="logo">
+            portfolio <a href="#"></a>
           </div>
           <input type="checkbox" id="click" />
           <label htmlFor="click" className="mainicon">
@@ -87,8 +105,11 @@ const Portfolio = () => {
               </a>
             </li>
             <li>
-              <a href="#contact" style={{ "--navAni": 5 }}
-               className={activeSection === "contact" ? "active" : ""}>
+              <a
+                href="#contact"
+                style={{ "--navAni": 5 }}
+                className={activeSection === "contact" ? "active" : ""}
+              >
                 Contact
               </a>
             </li>
@@ -126,7 +147,11 @@ const Portfolio = () => {
                 </a>
               </div>
               <div className="icon-block">
-                <a href="https://wa.me/9347521480" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/9347521480"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={Whatsapp} alt="WhatsApp Icon" />
                 </a>
               </div>
@@ -150,6 +175,8 @@ const Portfolio = () => {
               <span style={{ color: "#f9532d" }}>NandaKishore</span>{" "}
               Dharmalingam
             </h1>
+            {/* Signature component here */}
+            <Signature />
           </div>
         </div>
       </section>
@@ -162,10 +189,11 @@ const Portfolio = () => {
         <Skills />
       </section>
 
-      <section id="projects" >
+      <section id="projects">
         <Projects />
       </section>
-        <section id="contact">
+
+      <section id="contact">
         <Contact />
       </section>
     </div>

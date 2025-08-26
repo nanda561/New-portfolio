@@ -258,6 +258,7 @@ a {
     transform: translate(-50%, -50%);
 }
 
+
 /* Keyframes */
 @keyframes Rotate {
     from { transform: rotate(0deg); }
