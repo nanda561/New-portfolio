@@ -16,7 +16,7 @@ const Signature = () => {
 
   useEffect(() => {
     // Adjust timeout according to gif duration (ms)
-    const timer = setTimeout(() => setShowGif(false), 3000);
+    const timer = setTimeout(() => setShowGif(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
