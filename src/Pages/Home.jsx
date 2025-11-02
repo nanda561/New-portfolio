@@ -31,10 +31,10 @@ const Signature = () => {
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -61,64 +61,69 @@ const Portfolio = () => {
           <div className="logo">
             portfolio <a href="#"></a>
           </div>
-          <input type="checkbox" id="click" />
-          <label htmlFor="click" className="mainicon">
+          <button
+            className="mainicon"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
             <div className="menu">
               <i className="bx bx-menu"></i>
             </div>
-          </label>
-          <ul>
-            <li>
-              <a
-                href="#home"
-                style={{ "--navAni": 1 }}
-                className={activeSection === "home" ? "active" : ""}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                style={{ "--navAni": 2 }}
-                className={activeSection === "about" ? "active" : ""}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                style={{ "--navAni": 3 }}
-                className={activeSection === "skills" ? "active" : ""}
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                style={{ "--navAni": 4 }}
-                className={activeSection === "projects" ? "active" : ""}
-              >
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                style={{ "--navAni": 5 }}
-                className={activeSection === "contact" ? "active" : ""}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
+          </button>
+          <nav className={menuOpen ? "nav-open" : ""}>
+            <ul>
+              <li>
+                <a
+                  href="#home"
+                  style={{ "--navAni": 1 }}
+                  className={activeSection === "home" ? "active" : ""}
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  style={{ "--navAni": 2 }}
+                  className={activeSection === "about" ? "active" : ""}
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  style={{ "--navAni": 3 }}
+                  className={activeSection === "skills" ? "active" : ""}
+                >
+                  Skills
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  style={{ "--navAni": 4 }}
+                  className={activeSection === "projects" ? "active" : ""}
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  style={{ "--navAni": 5 }}
+                  className={activeSection === "contact" ? "active" : ""}
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
 
       {/* Main Section */}
-      <section id="home" className="container">
+      <section className="container" id="home">
         <div className="main">
           <div className="rounding-sec">
             <div className="big-circle">
