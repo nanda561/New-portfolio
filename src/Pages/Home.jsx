@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Linked from "../assets/link.svg";
@@ -32,10 +33,10 @@ const Signature = () => {
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("");
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -57,7 +58,6 @@ const Portfolio = () => {
   return (
     <div>
       {/* Header and Navigation */}
-<<<<<<< HEAD
       <header>
         <div className="container page-header">
           <div className="logo">portfolio</div>
@@ -95,76 +95,11 @@ const Portfolio = () => {
               </a>
             </li>
           </ul>
-=======
-      <header className="container">
-        <div className="page-header">
-          <div className="logo">
-            portfolio <a href="#"></a>
-          </div>
-          <button
-            className="mainicon"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <div className="menu">
-              <i className="bx bx-menu"></i>
-            </div>
-          </button>
-          <nav className={menuOpen ? "nav-open" : ""}>
-            <ul>
-              <li>
-                <a
-                  href="#home"
-                  style={{ "--navAni": 1 }}
-                  className={activeSection === "home" ? "active" : ""}
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  style={{ "--navAni": 2 }}
-                  className={activeSection === "about" ? "active" : ""}
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#skills"
-                  style={{ "--navAni": 3 }}
-                  className={activeSection === "skills" ? "active" : ""}
-                >
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  style={{ "--navAni": 4 }}
-                  className={activeSection === "projects" ? "active" : ""}
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  style={{ "--navAni": 5 }}
-                  className={activeSection === "contact" ? "active" : ""}
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
->>>>>>> a46b1262f65820de7898eaf8224f5b5e07b2183a
         </div>
       </header>
 
       {/* Main Section */}
-      <section className="container" id="home">
+      <section id="home" className="container">
         <div className="main">
           <div className="rounding-sec">
             <div className="big-circle">
