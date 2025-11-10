@@ -1,119 +1,50 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import FloatingSphere from "./FloatingSphere";
 
-export default function ContactSection() {
+export default function Contact() {
   return (
-    <>
-      <section
-        id="projects"
-        className="py-20 px-4 text-white"
-        style={{ backgroundColor: "#1F252E" }}
-      >
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Get In <span className="text-orange-500">Touch</span>
-          </h2>
+    <section id="contact" className="w-full py-20 bg-[#1F252E]">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Left Info Panel */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Let's work together</h3>
-              <p className="text-gray-300 mb-8">
-                I'm always interested in new opportunities and exciting
-                projects. Feel free to reach out if you'd like to collaborate!
-              </p>
+        {/* LEFT SIDE */}
+        <div>
+          <h1 className="text-4xl font-bold mb-4">
+            Get In <span className="text-[#f9532d]">Touch</span>
+          </h1>
 
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <Mail className="w-6 h-6 text-orange-500" />
-                  <a
-                    href="mailto:nandu3112002@gmail.com"
-                    className="text-gray-300 hover:text-orange-400 transition"
-                  >
-                    nandu3112002@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <Phone className="w-6 h-6 text-orange-500" />
-                  <a
-                    href="tel:+919876543210"
-                    className="text-gray-300 hover:text-orange-400 transition"
-                  >
-                    +91 9347521480
-                  </a>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <MapPin className="w-6 h-6 text-orange-500" />
-                  <span className="text-gray-300">Tirupati,India</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Contact Form */}
-            <form
-              action="https://formspree.io/f/xyzjjljl"
-              method="POST"
-              className="space-y-6"
-            >
-              <div>
-                <label htmlFor="name" className="sr-only">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors duration-300"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors duration-300"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="sr-only">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  placeholder="Your Message"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors duration-300 resize-none"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors duration-300"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer  className="py-20 px-4 text-white"
-        style={{ backgroundColor: "#1F252E" }}
-      >
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400">
-            © 2025 Dharalingam Nandakishore. All rights reserved.
+          <p className="text-gray-300 mb-6 leading-relaxed">
+            I'm always interested in new opportunities and exciting collaborations.
+            Feel free to reach out.
           </p>
+
+          <form className="flex flex-col gap-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="bg-[#111a22] border border-[#2c3a45] p-3 rounded-lg text-white focus:outline-none focus:border-[#f9532d]"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="bg-[#111a22] border border-[#2c3a45] p-3 rounded-lg text-white focus:outline-none focus:border-[#f9532d]"
+            />
+            <textarea
+              placeholder="Your Message"
+              rows="4"
+              className="bg-[#111a22] border border-[#2c3a45] p-3 rounded-lg text-white focus:outline-none focus:border-[#f9532d]"
+            ></textarea>
+
+            <button className="bg-[#f9532d] text-white font-semibold py-3 rounded-lg hover:opacity-90 transition">
+              Send Message
+            </button>
+          </form>
         </div>
-      </footer>
-    </>
+
+        {/* RIGHT SIDE */}
+        <div className="w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden">
+          <FloatingSphere />
+        </div>
+
+      </div>
+    </section>
   );
 }

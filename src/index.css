@@ -1,3 +1,38 @@
+:root {
+  --primary-color: #f9532d;
+  --primary-dark: #1F252E;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --------------------------
+   CUSTOM CURSOR
+   -------------------------- */
+
+body { cursor: none !important; }
+
+#cursor-dot, #cursor-ring {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2147483647;
+  transform: translate(-50%, -50%);
+  isolation: isolate; /* ✅ This prevents clipping and stacking issues */
+}
+
+
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #f9532d;
+  border-radius: 50%;
+}
+
+#cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #f9532d;
+  border-radius: 50%;
+  transition: transform .15s, width .25s, height .25s, background-color .25s;
+}

@@ -24,8 +24,11 @@ body {
 
 /* Container */
 .container {
-    padding: 0 8.4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
+
 
 /* Image */
 .img-w {
@@ -115,6 +118,13 @@ li a:hover {
     column-gap: 6rem;
     align-items: center;
     position: relative;
+}
+.typewriter {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #f9532d;
+  text-transform: uppercase;
 }
 
 .main h3 {
